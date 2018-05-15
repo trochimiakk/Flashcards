@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+    </rowConstraints>
+    <children>
+        <Label alignment="CENTER" layoutX="210.0" layoutY="77.0" prefWidth="Infinity" styleClass="title-label" text="File with translations:" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin></Label>
+        <ComboBox prefWidth="Infinity" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin></ComboBox>
+        <CheckBox mnemonicParsing="false" text="Reverse order" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin></CheckBox>
+        <Button mnemonicParsing="false" prefWidth="Infinity" text="Load translations" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin></Button>
+        <Label alignment="CENTER" prefHeight="17.0" prefWidth="Infinity" styleClass="title-panel" text="Practice" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin></Label>
+        <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Word:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <TextField alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Translation:" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+        <TextField alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+        <Button mnemonicParsing="false" prefWidth="Infinity" text="Check" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+        <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Save as:" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+        <TextField alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+        <Button mnemonicParsing="false" prefWidth="Infinity" text="Save" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+
+
+    </children>
+</GridPane>
