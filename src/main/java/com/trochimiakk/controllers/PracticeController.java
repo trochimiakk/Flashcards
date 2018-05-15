@@ -1,4 +1,4 @@
 package com.trochimiakk.controllers;
 
-public class CheckYourselfController {
+public class PracticeController {
 }

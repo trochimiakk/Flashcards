@@ -40,11 +40,11 @@
       <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Word:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
       <TextField fx:id="wordTextField" alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
        <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Translation:" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-       <TextField fx:id="translationTextField" alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-      <Button mnemonicParsing="false" prefWidth="Infinity" text="Add" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+       <TextField fx:id="translationTextField" alignment="CENTER" onAction="#callAddFlashcardToListMethod" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <Button mnemonicParsing="false" onAction="#callAddFlashcardToListMethod" prefWidth="Infinity" text="Add" GridPane.columnIndex="2" GridPane.rowIndex="8" />
        <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Save as:" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-       <TextField fx:id="saveAsTextField" alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-       <Button mnemonicParsing="false" prefWidth="Infinity" text="Save" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+       <TextField fx:id="saveAsTextField" alignment="CENTER" onAction="#callSaveFlashcardsMethod" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+       <Button mnemonicParsing="false" onAction="#callSaveFlashcardsMethod" prefWidth="Infinity" text="Save" GridPane.columnIndex="2" GridPane.rowIndex="13" />
 
    </children>
 </GridPane>
