@@ -35,7 +35,7 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
     </rowConstraints>
     <children>
-        <Label alignment="CENTER" layoutX="210.0" layoutY="77.0" prefWidth="Infinity" styleClass="title-label" text="File with translations:" GridPane.rowIndex="2">
+        <Label alignment="CENTER" layoutX="210.0" layoutY="77.0" prefWidth="Infinity" styleClass="title-label" text="List of flashcards:" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin></Label>
@@ -47,7 +47,7 @@
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin></CheckBox>
-        <Button mnemonicParsing="false" prefWidth="Infinity" text="Load translations" GridPane.rowIndex="6">
+        <Button mnemonicParsing="false" prefWidth="Infinity" text="Load flashcards" GridPane.rowIndex="6">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin></Button>
@@ -60,9 +60,9 @@
         <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Translation:" GridPane.columnIndex="2" GridPane.rowIndex="5" />
         <TextField alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="6" />
         <Button mnemonicParsing="false" prefWidth="Infinity" text="Check" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-        <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Save as:" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-        <TextField alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-        <Button mnemonicParsing="false" prefWidth="Infinity" text="Save" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+        <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Display correct answer label" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="10" />
+        <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Display progress label" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+        <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Display number of mistakes label" GridPane.columnIndex="2" GridPane.rowIndex="13" />
 
 
     </children>

@@ -6,13 +6,14 @@
     -fx-background-color: #1d1d1d;
 }
 
-.menu-item, .context-menu, .menu:hover {
+.menu-item, .context-menu, .menu:hover, .menu:showing {
     -fx-background-color: #ff5400;
 }
 
 .menu-item:focused {
     -fx-background-color: #db4800;
 }
+
 
 
 .menu .label, .title-panel, .title-label, .check-box {
@@ -70,4 +71,8 @@
 
 .check-box:selected .box {
     -fx-background-color: #ea7f4b;
+}
+
+.text-field {
+    -fx-font-size: 15px;
 }
