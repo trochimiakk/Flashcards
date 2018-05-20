@@ -1,11 +1,13 @@
 package com.trochimiakk.flashcards;
 
 import com.google.gson.Gson;
+import com.google.inject.Inject;
 import com.trochimiakk.exceptions.EmptyFlashcardsFileNameException;
 import com.trochimiakk.exceptions.EmptyFlashcardsListException;
 import com.trochimiakk.exceptions.FiledToSaveFlashcardsException;
 import com.trochimiakk.exceptions.InvalidFlashcardException;
 
+import javax.inject.Named;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -15,6 +17,8 @@ import java.util.List;
 public class LocalFlashcardsManager implements FlashcardsManager {
 
     private List<Flashcard> flashcardList = new ArrayList<Flashcard>();
+    @Inject
+    @Named("outputFolder")
     private String outputFolder;
 
     public void addFlashcard(String word, String translation) throws InvalidFlashcardException {

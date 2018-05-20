@@ -1,25 +1,24 @@
 package com.trochimiakk.controllers;
 
+import com.google.inject.Inject;
 import com.trochimiakk.exceptions.EmptyFlashcardsFileNameException;
 import com.trochimiakk.exceptions.EmptyFlashcardsListException;
 import com.trochimiakk.exceptions.FiledToSaveFlashcardsException;
 import com.trochimiakk.exceptions.InvalidFlashcardException;
+import com.trochimiakk.flashcards.FlashcardsManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 
-public class AddWordsController {
+public class AddWordsController implements Controller {
 
-    private MainController parentController;
     @FXML private TextField wordTextField;
     @FXML private TextField translationTextField;
     @FXML private TextField saveAsTextField;
 
-    public void setParentController(MainController parentController) {
-        this.parentController = parentController;
-    }
+    @Inject
+    private FlashcardsManager flashcardsManager;
 
     public void callSaveFlashcardsMethod(ActionEvent actionEvent) {
         saveFlashcards();
@@ -27,14 +26,14 @@ public class AddWordsController {
 
     private void saveFlashcards() {
         try {
-            parentController.getFlashcardsManager().saveFlashcards(saveAsTextField.getText());
-            parentController.showAlert("Flashcards has been saved", Alert.AlertType.INFORMATION);
+            flashcardsManager.saveFlashcards(saveAsTextField.getText());
+            showAlert("Flashcards has been saved", Alert.AlertType.INFORMATION);
         } catch (EmptyFlashcardsListException e) {
-            parentController.showAlert("There is nothing to save. Flashcards list is empty", Alert.AlertType.ERROR);
+            showAlert("There is nothing to save. Flashcards list is empty", Alert.AlertType.ERROR);
         } catch (EmptyFlashcardsFileNameException e) {
-            parentController.showAlert("Flashcards file name can't be empty", Alert.AlertType.ERROR);
+            showAlert("Flashcards file name can't be empty", Alert.AlertType.ERROR);
         } catch (FiledToSaveFlashcardsException e) {
-            parentController.showAlert("Failed to save flashcards", Alert.AlertType.ERROR);
+            showAlert("Failed to save flashcards", Alert.AlertType.ERROR);
         }
     }
 
@@ -44,10 +43,10 @@ public class AddWordsController {
 
     private void addFlashcardToList() {
         try {
-            parentController.getFlashcardsManager().addFlashcard(wordTextField.getText(), translationTextField.getText());
+            flashcardsManager.addFlashcard(wordTextField.getText(), translationTextField.getText());
             clearFields();
         } catch (InvalidFlashcardException e) {
-            parentController.showAlert("Word or/and translation is empty", Alert.AlertType.ERROR);
+            showAlert("Word or/and translation is empty", Alert.AlertType.ERROR);
         }
     }
 

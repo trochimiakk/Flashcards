@@ -20,7 +20,6 @@ public class FlashcardsManagerProvider implements Provider<FlashcardsManager> {
 
     @Override
     public FlashcardsManager get() {
-        System.out.println(flashcardsManager);
         if (flashcardsManager.equals("local")){
             LocalFlashcardsManager localFlashcardsManager = new LocalFlashcardsManager();
             localFlashcardsManager.setOutputFolder(outputFolder);
