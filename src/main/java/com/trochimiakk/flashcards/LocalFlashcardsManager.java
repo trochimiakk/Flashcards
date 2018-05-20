@@ -17,8 +17,6 @@ import java.util.List;
 public class LocalFlashcardsManager implements FlashcardsManager {
 
     private List<Flashcard> flashcardList = new ArrayList<Flashcard>();
-    @Inject
-    @Named("outputFolder")
     private String outputFolder;
 
     public void addFlashcard(String word, String translation) throws InvalidFlashcardException {
