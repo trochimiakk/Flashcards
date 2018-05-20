@@ -35,4 +35,10 @@ public class SettingsManager {
         }
     }
 
+    public Properties getDefaultProperties() {
+        Properties settings = new Properties();
+        settings.setProperty("outputFolder", System.getProperty("user.home") + "\\.Flashcards\\translations\\");
+        settings.setProperty("flashcardsManager", "local");
+        return settings;
+    }
 }

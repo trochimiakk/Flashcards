@@ -22,7 +22,6 @@ public class LocalFlashcardsManager implements FlashcardsManager {
             throw new InvalidFlashcardException("Word and/or translation is empty");
         }
         flashcardList.add(new Flashcard(word, translation));
-        System.out.println(flashcardList.size());
     }
 
     public void setOutputFolder(String outputFolder){
