@@ -46,5 +46,10 @@ public class LocalFlashcardsManager implements FlashcardsManager {
         }
     }
 
+    @Override
+    public String getOutputFolder() {
+        return outputFolder;
+    }
+
 
 }

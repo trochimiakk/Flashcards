@@ -16,4 +16,5 @@ public interface FlashcardsManager {
 
     void saveFlashcards(String translationsFileName) throws EmptyFlashcardsListException, EmptyFlashcardsFileNameException, FiledToSaveFlashcardsException;
 
+    String getOutputFolder();
 }

@@ -21,4 +21,9 @@ public class ApiFlashcardsManager implements FlashcardsManager {
     public void saveFlashcards(String translationsFileName) throws EmptyFlashcardsListException, EmptyFlashcardsFileNameException, FiledToSaveFlashcardsException {
         throw new NotImplementedException();
     }
+
+    @Override
+    public String getOutputFolder() {
+        throw new UnsupportedOperationException();
+    }
 }

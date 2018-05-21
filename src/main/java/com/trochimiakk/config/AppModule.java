@@ -1,6 +1,7 @@
 package com.trochimiakk.config;
 
 import com.google.inject.AbstractModule;
+import com.google.inject.Singleton;
 import com.google.inject.name.Names;
 import com.trochimiakk.controllers.MainController;
 import com.trochimiakk.exceptions.FailedToLoadSettingsException;
@@ -13,8 +14,8 @@ public class AppModule extends AbstractModule {
 
     protected void configure(){
         Names.bindProperties(binder(), getProperties());
-        bind(MainController.class).toInstance(new MainController());
-        bind(FlashcardsManager.class).toProvider(FlashcardsManagerProvider.class);
+        bind(SettingsManager.class).toInstance(new SettingsManager());
+        bind(FlashcardsManager.class).toProvider(FlashcardsManagerProvider.class).in(Singleton.class);
     }
 
     private Properties getProperties(){

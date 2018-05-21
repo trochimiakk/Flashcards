@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trochimiakk.controllers.SettingsController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -38,36 +38,36 @@
             <GridPane.margin>
                 <Insets />
             </GridPane.margin></Label>
-        <Label alignment="CENTER_RIGHT" prefWidth="Infinity" styleClass="title-label" text="Default folder:" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <Label alignment="CENTER_RIGHT" prefWidth="Infinity" styleClass="title-label" text="Output folder:" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <padding>
             <Insets right="10.0" />
          </padding></Label>
-        <TextField alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+        <TextField fx:id="outputFolderTextField" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="2">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <GridPane.margin>
             <Insets />
          </GridPane.margin></TextField>
-        <Button mnemonicParsing="false" prefWidth="Infinity" text="Change" GridPane.columnIndex="3" GridPane.rowIndex="2">
+        <Button fx:id="changeOutputFolderButton" mnemonicParsing="false" onAction="#callChangeOutputFolder" prefWidth="Infinity" text="Change" GridPane.columnIndex="3" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets left="10.0" />
          </GridPane.margin></Button>
-        <Label alignment="CENTER_RIGHT" prefWidth="Infinity" styleClass="title-label" text="Default translation manager:" GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <Label alignment="CENTER_RIGHT" prefWidth="Infinity" styleClass="title-label" text="Flashcards manager:" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <padding>
             <Insets right="10.0" />
          </padding></Label>
-        <CheckBox mnemonicParsing="false" text="Local" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-        <CheckBox mnemonicParsing="false" text="Database" GridPane.columnIndex="2" GridPane.rowIndex="4">
+        <CheckBox fx:id="localFlashcardsManagerCheckbox" mnemonicParsing="false" onAction="#changeFlashcardsManager" text="Local" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+        <CheckBox fx:id="apiFlashcardsManagerCheckbox" mnemonicParsing="false" onAction="#changeFlashcardsManager" text="Database" GridPane.columnIndex="2" GridPane.rowIndex="4">
          <GridPane.margin>
             <Insets left="100.0" />
          </GridPane.margin></CheckBox>
-        <Button mnemonicParsing="false" prefWidth="Infinity" text="Save settings" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+        <Button fx:id="saveSettingsButton" disable="true" mnemonicParsing="false" onAction="#saveSettings" prefWidth="Infinity" text="Save settings" GridPane.columnIndex="2" GridPane.rowIndex="12" />
     </children>
 </GridPane>
