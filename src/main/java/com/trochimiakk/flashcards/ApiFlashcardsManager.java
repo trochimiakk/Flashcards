@@ -1,10 +1,9 @@
 package com.trochimiakk.flashcards;
 
-import com.trochimiakk.exceptions.EmptyFlashcardsFileNameException;
-import com.trochimiakk.exceptions.EmptyFlashcardsListException;
-import com.trochimiakk.exceptions.FiledToSaveFlashcardsException;
-import com.trochimiakk.exceptions.InvalidFlashcardException;
+import com.trochimiakk.exceptions.*;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+import java.util.List;
 
 public class ApiFlashcardsManager implements FlashcardsManager {
     @Override
@@ -26,4 +25,25 @@ public class ApiFlashcardsManager implements FlashcardsManager {
     public String getOutputFolder() {
         throw new UnsupportedOperationException();
     }
+
+    @Override
+    public List<String> getFilesList() throws FailedToLoadFilesListException {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public void loadFlashcards(String fileName) throws FailedToLoadFlashcardsException {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public int getNumberOfFlashcards() {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public Flashcard getRandomFlashcard() throws EmptyFlashcardsListException {
+        throw new NotImplementedException();
+    }
+
 }

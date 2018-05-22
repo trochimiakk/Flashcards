@@ -1,10 +1,9 @@
 package com.trochimiakk.flashcards;
 
-import com.trochimiakk.exceptions.EmptyFlashcardsFileNameException;
-import com.trochimiakk.exceptions.EmptyFlashcardsListException;
-import com.trochimiakk.exceptions.FiledToSaveFlashcardsException;
-import com.trochimiakk.exceptions.InvalidFlashcardException;
+import com.trochimiakk.exceptions.*;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+import java.util.List;
 
 public interface FlashcardsManager {
 
@@ -17,4 +16,12 @@ public interface FlashcardsManager {
     void saveFlashcards(String translationsFileName) throws EmptyFlashcardsListException, EmptyFlashcardsFileNameException, FiledToSaveFlashcardsException;
 
     String getOutputFolder();
+
+    List<String> getFilesList() throws FailedToLoadFilesListException;
+
+    void loadFlashcards(String fileName) throws FailedToLoadFlashcardsException;
+
+    int getNumberOfFlashcards();
+
+    Flashcard getRandomFlashcard() throws EmptyFlashcardsListException;
 }

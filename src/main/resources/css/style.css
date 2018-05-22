@@ -76,3 +76,30 @@
 .text-field {
     -fx-font-size: 15px;
 }
+
+.correct-answer {
+    -fx-background-color:
+            linear-gradient(#b9c835, #7dc800),
+            radial-gradient(center 50% -40%, radius 200%, #82b735 45%, #569000 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+}
+
+.wrong-answer {
+    -fx-background-color:
+            linear-gradient(#d75138, #d73326),
+            radial-gradient(center 50% -40%, radius 200%, #d7121a 45%, #9f052a 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+}
+
+.stats {
+    -fx-background-color:
+            linear-gradient(#cd8b05, #d77203),
+            radial-gradient(center 50% -40%, radius 200%, #d76b19 45%, #d74d02 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+}

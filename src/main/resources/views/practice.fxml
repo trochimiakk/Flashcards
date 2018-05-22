@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trochimiakk.controllers.PracticeController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -33,21 +33,22 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
     </rowConstraints>
     <children>
         <Label alignment="CENTER" layoutX="210.0" layoutY="77.0" prefWidth="Infinity" styleClass="title-label" text="List of flashcards:" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin></Label>
-        <ComboBox prefWidth="Infinity" GridPane.rowIndex="3">
+        <ComboBox fx:id="filesListComboBox" prefWidth="Infinity" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin></ComboBox>
-        <CheckBox mnemonicParsing="false" text="Reverse order" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+        <CheckBox fx:id="reverseWordsOrderCheckBox" mnemonicParsing="false" text="Reverse words order" GridPane.halignment="CENTER" GridPane.rowIndex="4">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin></CheckBox>
-        <Button mnemonicParsing="false" prefWidth="Infinity" text="Load flashcards" GridPane.rowIndex="6">
+        <Button mnemonicParsing="false" onAction="#loadFlashcardsAndStart" prefWidth="Infinity" text="Load and start" GridPane.rowIndex="6">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin></Button>
@@ -56,14 +57,14 @@
                 <Insets />
             </GridPane.margin></Label>
         <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Word:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-        <TextField alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <TextField fx:id="wordTextField" alignment="CENTER" disable="true" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="3" />
         <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Translation:" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-        <TextField alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-        <Button mnemonicParsing="false" prefWidth="Infinity" text="Check" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-        <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Display correct answer label" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="10" />
-        <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Display progress label" GridPane.columnIndex="2" GridPane.rowIndex="12" />
-        <Label alignment="CENTER" prefWidth="Infinity" styleClass="title-label" text="Display number of mistakes label" GridPane.columnIndex="2" GridPane.rowIndex="13" />
-
+        <TextField fx:id="translationTextField" alignment="CENTER" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+        <Button fx:id="checkAnswerButton" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefWidth="Infinity" text="Check" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+        <Label fx:id="correctAnswerLabel" alignment="CENTER" prefWidth="Infinity" styleClass="title-label" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="10" />
+        <Label fx:id="progressLabel" alignment="CENTER" prefWidth="Infinity" styleClass="title-label, stats" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+        <Label fx:id="mistakesLabel" alignment="CENTER" prefWidth="Infinity" styleClass="title-label, stats" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+        <Label fx:id="" alignment="CENTER" prefWidth="Infinity" styleClass="title-label" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="10" />
 
     </children>
 </GridPane>
