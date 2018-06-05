@@ -19,7 +19,7 @@ public interface FlashcardsManager {
 
     List<String> getFilesList() throws FailedToLoadFilesListException;
 
-    void loadFlashcards(String fileName) throws FailedToLoadFlashcardsException;
+    List<Flashcard> loadFlashcards(String fileName) throws FailedToLoadFlashcardsException;
 
     int getNumberOfFlashcards();
 

@@ -66,12 +66,13 @@ public class LocalFlashcardsManager implements FlashcardsManager {
     }
 
     @Override
-    public void loadFlashcards(String fileName) throws FailedToLoadFlashcardsException {
+    public List<Flashcard> loadFlashcards(String fileName) throws FailedToLoadFlashcardsException {
         try {
             Gson gson = new Gson();
             String json = new String(Files.readAllBytes(Paths.get(outputFolder + fileName)));
             Type type = new TypeToken<List<Flashcard>>(){}.getType();
             flashcardList = gson.fromJson(json, type);
+            return flashcardList;
         } catch (IOException e) {
             throw new FailedToLoadFlashcardsException("Failed to load flashcards");
         }

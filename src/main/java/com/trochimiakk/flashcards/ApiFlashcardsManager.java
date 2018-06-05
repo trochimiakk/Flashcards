@@ -32,7 +32,7 @@ public class ApiFlashcardsManager implements FlashcardsManager {
     }
 
     @Override
-    public void loadFlashcards(String fileName) throws FailedToLoadFlashcardsException {
+    public List<Flashcard> loadFlashcards(String fileName) throws FailedToLoadFlashcardsException {
         throw new NotImplementedException();
     }
 
