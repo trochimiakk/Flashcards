@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface FlashcardsManager {
 
-    void addFlashcard(String word, String translation) throws InvalidFlashcardException;
+    void addFlashcard(Flashcard flashcard) throws InvalidFlashcardException;
 
     default void setOutputFolder(String outputFolder){
         throw new NotImplementedException();

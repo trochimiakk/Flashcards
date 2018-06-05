@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ApiFlashcardsManager implements FlashcardsManager {
     @Override
-    public void addFlashcard(String word, String translation) throws InvalidFlashcardException {
+    public void addFlashcard(Flashcard flashcard) throws InvalidFlashcardException {
         throw new NotImplementedException();
     }
 

@@ -19,11 +19,11 @@ public class LocalFlashcardsManager implements FlashcardsManager {
     private List<Flashcard> flashcardList = new ArrayList<Flashcard>();
     private String outputFolder;
 
-    public void addFlashcard(String word, String translation) throws InvalidFlashcardException {
-        if (word.equals("") || translation.equals("")){
+    public void addFlashcard(Flashcard flashcard) throws InvalidFlashcardException {
+        if (!flashcard.isValid()){
             throw new InvalidFlashcardException("Word and/or translation is empty");
         }
-        flashcardList.add(new Flashcard(word, translation));
+        flashcardList.add(flashcard);
     }
 
     public void setOutputFolder(String outputFolder){

@@ -10,6 +10,10 @@ public class Flashcard {
         this.translation = translation;
     }
 
+    boolean isValid(){
+        return !word.equals("") && !translation.equals("");
+    }
+
     public String getWord() {
         return word;
     }

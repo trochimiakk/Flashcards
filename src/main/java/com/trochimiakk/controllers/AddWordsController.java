@@ -5,6 +5,7 @@ import com.trochimiakk.exceptions.EmptyFlashcardsFileNameException;
 import com.trochimiakk.exceptions.EmptyFlashcardsListException;
 import com.trochimiakk.exceptions.FiledToSaveFlashcardsException;
 import com.trochimiakk.exceptions.InvalidFlashcardException;
+import com.trochimiakk.flashcards.Flashcard;
 import com.trochimiakk.flashcards.FlashcardsManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,7 +44,8 @@ public class AddWordsController implements Controller {
 
     private void addFlashcardToList() {
         try {
-            flashcardsManager.addFlashcard(wordTextField.getText(), translationTextField.getText());
+            Flashcard flashcard = new Flashcard(wordTextField.getText(), translationTextField.getText());
+            flashcardsManager.addFlashcard(flashcard);
             clearFields();
         } catch (InvalidFlashcardException e) {
             showAlert("Word or/and translation is empty", Alert.AlertType.ERROR);
