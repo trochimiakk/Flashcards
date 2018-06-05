@@ -1,5 +1,7 @@
 package com.trochimiakk.settings;
 
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
 import com.trochimiakk.exceptions.FailedToLoadSettingsException;
 import com.trochimiakk.exceptions.FailedToSaveSettingsException;
 
@@ -11,9 +13,14 @@ import java.util.Properties;
 
 public class SettingsManager {
 
-    private String settinsFileLocation = System.getProperty("user.home") + "\\.Flashcards\\settings\\settings.properties";
+    private String settinsFileLocation;
 
-    public Properties loadProperties() throws FailedToLoadSettingsException {
+    @Inject
+    public SettingsManager(@Named("settings file location")String settinsFileLocation) {
+        this.settinsFileLocation = settinsFileLocation;
+    }
+
+    public Properties loadSettings() throws FailedToLoadSettingsException {
         try {
             FileInputStream fileInputStream = new FileInputStream(settinsFileLocation);
             Properties settings = new Properties();
@@ -35,7 +42,7 @@ public class SettingsManager {
         }
     }
 
-    public Properties getDefaultProperties() {
+    public Properties getDefaultSettings() {
         Properties settings = new Properties();
         settings.setProperty("outputFolder", System.getProperty("user.home") + "\\.Flashcards\\translations\\");
         settings.setProperty("flashcardsManager", "local");
