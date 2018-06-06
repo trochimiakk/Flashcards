@@ -5,6 +5,7 @@ import com.trochimiakk.exceptions.FailedToSaveSettingsException;
 import org.junit.*;
 import org.junit.rules.TemporaryFolder;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -59,7 +60,7 @@ public class SettingsManagerTest {
     @Test
     public void shouldCreateDefaultProperties() {
         //given
-        String outputFolder = System.getProperty("user.home") + "\\.Flashcards\\translations\\";
+        String outputFolder = System.getProperty("user.home") + File.separator + ".Flashcards" + File.separator + "translations" + File.separator;
         String flashcardsManager = "local";
         SettingsManager settingsManager = new SettingsManager("somePath");
 
@@ -74,7 +75,7 @@ public class SettingsManagerTest {
     @Test(expected = FailedToSaveSettingsException.class)
     public void shouldThrowFailedToSaveSettingsExceptionWhenSettingsFilePathIsWrong() throws FailedToSaveSettingsException {
         //given
-        String wrongSettingsFilePath = "X\\Y\\Z";
+        String wrongSettingsFilePath = "c" + File.separator + "d" + File.separator + "x" + File.separator + "yy" + File.separator;
         Properties emptySettings = new Properties();
         SettingsManager settingsManager = new SettingsManager(wrongSettingsFilePath);
 

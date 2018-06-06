@@ -6,6 +6,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -64,7 +65,7 @@ public class LocalFlashcardsManagerTest {
     @Test(expected = FiledToSaveFlashcardsException.class)
     public void shouldThrowFailedToSaveFlashcardsExceptionWhenOutputFolderIsWrong() throws EmptyFlashcardsListException, FiledToSaveFlashcardsException, EmptyFlashcardsFileNameException, InvalidFlashcardException {
         //given
-        String wrongOutputFolder = "c\\d\\x\\";
+        String wrongOutputFolder = "c" + File.separator + "d" + File.separator + "x" + File.separator + "yy"+ File.separator;
         String translationsFileName = "fileName";
         localFlashcardsManager.setOutputFolder(wrongOutputFolder);
         localFlashcardsManager.addFlashcard(new Flashcard("word", "translation"));
@@ -78,7 +79,7 @@ public class LocalFlashcardsManagerTest {
         //given
         Flashcard flashcard = new Flashcard("word", "translation");
         String expectedFileContent = String.format("[{\"word\":\"%s\",\"translation\":\"%s\"}]", flashcard.getWord(), flashcard.getTranslation());
-        String outputFolder = temporaryFolder.newFolder("flashcardsSaveTest").getAbsolutePath() + "\\";
+        String outputFolder = temporaryFolder.newFolder("flashcardsSaveTest").getAbsolutePath() + File.separator;
         String translationsFileName = "fileName";
         localFlashcardsManager.setOutputFolder(outputFolder);
         localFlashcardsManager.addFlashcard(flashcard);
@@ -98,14 +99,14 @@ public class LocalFlashcardsManagerTest {
     @Test
     public void shouldGenerateListOfFilesWithFlashcards() throws IOException, FailedToLoadFilesListException {
         //given
-        String outputFolder = temporaryFolder.newFolder("generateListOfFilesTest").getAbsolutePath() + "\\";
+        String outputFolder = temporaryFolder.newFolder("generateListOfFilesTest").getAbsolutePath() + File.separator;
         localFlashcardsManager.setOutputFolder(outputFolder);
         String firstFileWithValidExtension = "firstFile.json";
         String secondFileWithValidExtension = "secondFile.json";
         String fileWithInvalidExtension = "thirdFile.txt";
-        temporaryFolder.newFile("generateListOfFilesTest\\" + firstFileWithValidExtension);
-        temporaryFolder.newFile("generateListOfFilesTest\\" + secondFileWithValidExtension);
-        temporaryFolder.newFile("generateListOfFilesTest\\" + fileWithInvalidExtension);
+        temporaryFolder.newFile("generateListOfFilesTest" + File.separator + firstFileWithValidExtension);
+        temporaryFolder.newFile("generateListOfFilesTest" + File.separator + secondFileWithValidExtension);
+        temporaryFolder.newFile("generateListOfFilesTest" + File.separator + fileWithInvalidExtension);
 
         //when
         List<String> listOfFiles = localFlashcardsManager.getFilesList();
@@ -119,7 +120,7 @@ public class LocalFlashcardsManagerTest {
     @Test(expected = FailedToLoadFilesListException.class)
     public void shouldThrowFailedToLoadFilesListExceptionWhenOutputFolderIsWrong() throws FailedToLoadFilesListException {
         //given
-        String wrongOutputFolder = "c\\d\\xx\\yy";
+        String wrongOutputFolder = "c" + File.separator + "d" + File.separator + "x" + File.separator + "yy" + File.separator;
         localFlashcardsManager.setOutputFolder(wrongOutputFolder);
 
         //when
@@ -129,7 +130,7 @@ public class LocalFlashcardsManagerTest {
     @Test(expected = FailedToLoadFlashcardsException.class)
     public void shouldThrowFailedToLoadFlashcardsExceptionWhenOutputFolderIsWrong() throws FailedToLoadFlashcardsException {
         //given
-        String wrongOutputFolder = "c\\d\\xx\\yy";
+        String wrongOutputFolder = "c" + File.separator + "d" + File.separator + "x" + File.separator + "yy" + File.separator;
         String fileName = "fileName";
         localFlashcardsManager.setOutputFolder(wrongOutputFolder);
 
@@ -141,7 +142,7 @@ public class LocalFlashcardsManagerTest {
     @Test
     public void shouldLoadFlashcardsFromFile() throws IOException, FailedToLoadFlashcardsException {
         //given
-        String outputFolder = temporaryFolder.newFolder("loadFlashcardsFromFileTest").getAbsolutePath() +"\\";
+        String outputFolder = temporaryFolder.newFolder("loadFlashcardsFromFileTest").getAbsolutePath() + File.separator;
         String fileName = "fileWithFlashcards.json";
         localFlashcardsManager.setOutputFolder(outputFolder);
         Flashcard firstFlashcard = new Flashcard("word1", "translation1");

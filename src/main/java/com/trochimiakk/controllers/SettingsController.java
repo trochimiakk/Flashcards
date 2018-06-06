@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 
 import javax.inject.Named;
+import java.io.File;
 import java.net.URL;
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -78,10 +79,10 @@ public class SettingsController implements Initializable, Controller {
     }
 
     private String validatePath(String outputFolder) {
-        if (outputFolder.endsWith("\\")){
+        if (outputFolder.endsWith(File.separator)){
             return outputFolder;
         }
-        return outputFolder + "\\";
+        return outputFolder + File.separator;
     }
 
     private void changeOutputFolder(String outputFolder) {

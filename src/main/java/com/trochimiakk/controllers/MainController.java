@@ -7,6 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.GridPane;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -29,11 +30,11 @@ public class MainController implements Initializable, Controller {
     private void createRequiredFolders() {
         String userHomeDirectory = System.getProperty("user.home");
         try {
-            if (Files.notExists(Paths.get(userHomeDirectory + "\\.Flashcards\\translations"))) {
-                Files.createDirectories(Paths.get(userHomeDirectory + "\\.Flashcards\\translations"));
+            if (Files.notExists(Paths.get(userHomeDirectory + File.separator + ".Flashcards" + File.separator + "translations"))) {
+                Files.createDirectories(Paths.get(userHomeDirectory + File.separator + ".Flashcards" + File.separator + "translations"));
             }
-            if (Files.notExists(Paths.get(userHomeDirectory + "\\.Flashcards\\settings"))) {
-                Files.createDirectories(Paths.get(userHomeDirectory + "\\.Flashcards\\settings"));
+            if (Files.notExists(Paths.get(userHomeDirectory + File.separator + ".Flashcards" + File.separator + "settings"))) {
+                Files.createDirectories(Paths.get(userHomeDirectory + File.separator + ".Flashcards" + File.separator + "settings"));
             }
         } catch (IOException e) {
             showAlert("Failed to create required folders and files", Alert.AlertType.ERROR);

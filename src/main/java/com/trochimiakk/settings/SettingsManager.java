@@ -5,10 +5,7 @@ import com.google.inject.name.Named;
 import com.trochimiakk.exceptions.FailedToLoadSettingsException;
 import com.trochimiakk.exceptions.FailedToSaveSettingsException;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 
 public class SettingsManager {
@@ -44,7 +41,7 @@ public class SettingsManager {
 
     public Properties getDefaultSettings() {
         Properties settings = new Properties();
-        settings.setProperty("outputFolder", System.getProperty("user.home") + "\\.Flashcards\\translations\\");
+        settings.setProperty("outputFolder", System.getProperty("user.home") + File.separator + ".Flashcards" + File.separator + "translations" + File.separator);
         settings.setProperty("flashcardsManager", "local");
         return settings;
     }
