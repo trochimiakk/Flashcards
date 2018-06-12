@@ -28,11 +28,9 @@
       </HBox>
    </top>
     <center>
-        <StackPane styleClass="content-panel" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <StackPane fx:id="contentPanel" styleClass="content-panel" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <fx:include fx:id="addWordsPanel" source="addWords.fxml" />
-                <fx:include fx:id="settingsPanel" source="settings.fxml" visible="false" />
-                <fx:include fx:id="practicePanel" source="practice.fxml" visible="false" />
+                <fx:include source="addWords.fxml" />
             </children></StackPane>
     </center>
 </BorderPane>

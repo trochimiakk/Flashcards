@@ -29,10 +29,6 @@ public class SettingsController implements Initializable, Controller {
     @Inject
     private SettingsManager settingsManager;
 
-    @Inject
-    @Named("outputFolder")
-    private String outputFolder;
-
     @FXML
     private TextField outputFolderTextField;
 
@@ -47,7 +43,7 @@ public class SettingsController implements Initializable, Controller {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        changeOutputFolder(outputFolder);
+        setInitialOutputFolder(flashcardsManager.getOutputFolder());
         initializeFlashcardManagersCheckboxes();
     }
 
@@ -83,6 +79,10 @@ public class SettingsController implements Initializable, Controller {
             return outputFolder;
         }
         return outputFolder + File.separator;
+    }
+
+    private void setInitialOutputFolder(String outputFolder){
+        outputFolderTextField.setText(outputFolder);
     }
 
     private void changeOutputFolder(String outputFolder) {
